@@ -13,7 +13,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, .2);
+      background-color: rgba(0, 0, 0, .5);
     }
   </style>
 </head>
@@ -56,7 +56,7 @@
       var width = canvas.width = koef * innerWidth;
       var height = canvas.height = koef * innerHeight;
       var rand = Math.random;
-      ctx.fillStyle = "pink";
+      ctx.fillStyle = "aqua";
       ctx.fillRect(0, 0, width, height);
       ctx.font = "30px Arial";
       ctx.fillText("Paul Duong", 10, 50);
@@ -70,7 +70,7 @@
       window.addEventListener('resize', function() {
         width = canvas.width = koef * innerWidth;
         height = canvas.height = koef * innerHeight;
-        ctx.fillStyle = "pink";
+        ctx.fillStyle = "blue";
         ctx.fillRect(0, 0, width, height);
       });
       var traceCount = mobile ? 20 : 50;
@@ -102,7 +102,7 @@
           D: 2 * (i % 2) - 1,
           force: 0.2 * rand() + 0.7,
           //f: "hsla(0," + ~~(40 * rand() + 60) + "%," + ~~(60 * rand() + 20) + "%,.3)",
-          f: "pink",
+          f: "aqua",
           trace: []
         };
         for (var k = 0; k < traceCount; k++) e[i].trace[k] = {
@@ -120,7 +120,7 @@
         var n = -Math.cos(time);
         pulse((1 + n) * .5, (1 + n) * .5);
         time += ((Math.sin(time)) < 0 ? 9 : (n > 0.8) ? .2 : 1) * config.timeDelta;
-        ctx.fillStyle = "rgba(0,0,0,.1)";
+        ctx.fillStyle = "rgba(0,0,0,.9)";
         ctx.fillRect(0, 0, width, height);
         for (i = e.length; i--;) {
           var u = e[i];
@@ -156,7 +156,7 @@
           }
           ctx.fillStyle = u.f;
           for (k = 0; k < u.trace.length; k++) {
-            ctx.fillRect(u.trace[k].x, u.trace[k].y, 1, 1);
+            ctx.fillRect(u.trace[k].x, u.trace[k].y, 1.5, 1.4);
           }
         }
         //ctx.fillStyle = "rgba(255,255,255,1)";
@@ -169,18 +169,7 @@
     if (s === 'complete' || s === 'loaded' || s === 'interactive') init();
     else document.addEventListener('DOMContentLoaded', init, false);
   </script>
-  <div class="center-text",
-  style="background-color:rgb(0, 0, 0);
-        width: 100%;
-        color: rgb(225, 12, 168);
-        height:100%;
-        font-size: 31px;
-        font-style: italic;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 5px;
-        text-align: center;">tui iu ba hjhj</div>
+ 
 </body>
 
 </html>
